@@ -30,7 +30,7 @@ body {
 /* Card */
 
 .form-wrapper {
-    max-width: 1024px;  
+    max-width: 1024px;
     margin: 40px auto;
     padding: 36px 40px;
     background: var(--bg-card);
@@ -86,8 +86,8 @@ h2 {
 
 label {
     display: block;
-    margin-bottom: 26px;
-    font-size: 1.15rem;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
     line-height: 1.5;
 }
 
@@ -95,12 +95,12 @@ input,
 textarea,
 select {
     width: 100%;
-    margin-top: 8px;
-    padding: 12px 16px;
+    margin-top: 6px;
+    padding: 10px 14px;
+    font-size: 1rem;
     border-radius: 10px;
     border: 1px solid var(--border-soft);
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.05rem;
     background: #fff;
 }
 
@@ -123,18 +123,18 @@ select:focus {
 /* Checkbox */
 
 .checkbox {
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  gap: 12px;
-  align-items: center;
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 12px;
+    align-items: center;
 
-  margin-top: 28px;
-  font-size: 0.9rem;
-  line-height: 1.4;
+    margin-top: 28px;
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 .checkbox label {
-  line-height: 1.35;
+    line-height: 1.35;
 }
 
 .checkbox input {
@@ -188,9 +188,40 @@ button:disabled {
 /* Mobile */
 
 @media (max-width: 640px) {
+
+    label {
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 0.95rem;
+        padding: 9px 12px;
+        margin-top: 4px;
+    }
+
+    textarea {
+        min-height: 90px;
+    }
+
     .form-wrapper {
-        margin: 16px;  
+        margin: 16px;
         padding: 24px 16px 32px;
+    }
+
+    label + label {
+        margin-top: 4px;
+    }
+
+    .header h1 {
+        font-size: 1.4rem;
+    }
+
+    .intro {
+        font-size: 1.1rem;
     }
 
     button {
@@ -199,6 +230,7 @@ button:disabled {
 
     .grid {
         grid-template-columns: 1fr;
+        gap: 4px; 
     }
 
     h1 {
@@ -211,5 +243,60 @@ button:disabled {
 
     .logo img {
         max-width: 110px;
+    }
+}
+
+/* Tablet (iPad) */
+
+@media (max-width: 1024px) and (min-width: 641px) {
+
+    body {
+        font-size: 16px; 
+    }
+
+    .form-wrapper {
+        max-width: 880px;        
+        width: calc(100% - 32px);
+        margin: 32px auto;
+        padding: 32px 28px;
+    }
+
+    .header h1 {
+        font-size: 1.9rem;
+    }
+
+    .intro {
+        font-size: 1.15rem;
+        margin-bottom: 28px;
+    }
+
+    label {
+        font-size: 1.05rem;
+        margin-bottom: 18px;
+    }
+
+    input,
+    textarea,
+    select {
+        font-size: 1rem;
+        padding: 11px 14px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        margin-top: 32px;
+    }
+
+    .grid {
+        gap: 16px;
+    }
+
+    button {
+        font-size: 1.05rem;
+        padding: 16px;
+    }
+
+    .logo img {
+        max-width: 120px;
     }
 }
