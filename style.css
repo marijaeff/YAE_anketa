@@ -68,9 +68,9 @@ h1 {
 }
 
 h2 {
-    margin-top: 36px;
-    font-size: 1.3rem;
-    font-weight: 500;
+    margin-top: 40px;
+    margin-bottom: 16px;
+    font-size: 1.2rem;
 }
 
 /* Intro */
@@ -122,44 +122,58 @@ select:focus {
 /* Checkbox */
 
 .checkbox {
-    display: grid;
-    grid-template-columns: 22px 1fr;
-    gap: 12px;
-    align-items: start;
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.5;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 12px;
+  align-items: center;
+
+  margin-top: 28px;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
-.checkbox input[type="checkbox"] {
+.checkbox label {
+  line-height: 1.35;
+}
+
+.checkbox input {
+    margin-top: 4px;
     width: 18px;
     height: 18px;
-    margin-top: 4px;
+    accent-color: #1f5a4f;
 }
 
 
 /* Button */
 
 button {
-    margin-top: 25px;
-    padding: 18px;
+    margin-top: 32px;
+    padding: 16px 20px;
     width: 100%;
     border-radius: 14px;
     border: none;
-    background: var(--accent-dark);
+
+    background: #1f5a4f;
     color: #ffffff;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.1rem;
+
+    font-size: 1.05rem;
     font-weight: 500;
+    letter-spacing: 0.2px;
+
     cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
 }
 
 button:hover {
-    opacity: 0.9;
+    background: #184a41;
+}
+
+button:active {
+    transform: scale(0.98);
 }
 
 button:disabled {
-    opacity: 0.6;
+    background: #9bbfb8;
     cursor: not-allowed;
 }
 
@@ -175,8 +189,12 @@ button:disabled {
 
 @media (max-width: 640px) {
     .form-wrapper {
-        margin: 20px 16px;
-        padding: 28px 18px;
+        margin: 16px;  
+        padding: 24px 16px 32px;
+    }
+
+    button {
+        font-size: 1rem;
     }
 
     .grid {
