@@ -1,28 +1,40 @@
-(() => {
-  let last = 0;
+let lastHeight = 0;
 
-  function sendHeight() {
-    const h = Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight
-    );
+function sendHeight() {
+  const body = document.body;
+  const html = document.documentElement;
 
-    if (!h || Math.abs(h - last) < 4) return;
-    last = h;
+  const height = Math.max(
+    body.scrollHeight,
+    body.offsetHeight,
+    html.clientHeight,
+    html.scrollHeight,
+    html.offsetHeight
+  );
 
-    window.parent.postMessage(
-      { type: "yae:resize", height: h },
-      "*"
-    );
-  }
+  if (Math.abs(height - lastHeight) < 4) return;
+  lastHeight = height;
 
-  window.addEventListener("load", () => {
-    sendHeight();
-    setTimeout(sendHeight, 300);
-    setTimeout(sendHeight, 800);
-  });
+  window.parent.postMessage(
+    { type: "yae:resize", height },
+    "*"
+  );
+}
 
-  window.addEventListener("resize", () => {
-    setTimeout(sendHeight, 150);
-  });
-})();
+window.addEventListener("load", () => {
+  sendHeight();
+  setTimeout(sendHeight, 300);
+  setTimeout(sendHeight, 800);
+  setTimeout(sendHeight, 1500);
+});
+
+window.addEventListener("resize", () => {
+  setTimeout(sendHeight, 200);
+});
+
+new MutationObserver(() => {
+  setTimeout(sendHeight, 100);
+}).observe(document.body, {
+  childList: true,
+  subtree: true,
+});
