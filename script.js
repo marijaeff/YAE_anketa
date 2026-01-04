@@ -43,40 +43,49 @@ offenderSelect.addEventListener("change", function () {
 });
 
 
-(function () {
-  let lastHeight = 0;
+(() => {
+  let last = 0;
 
-  function sendHeight() {
-    const height = document.documentElement.scrollHeight;
-
-    // 🔑 защита от бесконечного роста
-    if (Math.abs(height - lastHeight) < 4) return;
-
-    lastHeight = height;
-
-    window.parent.postMessage(
-      { type: "resize-iframe", height },
-      "*"
-    );
+  function getHeight() {
+    const b = document.body?.scrollHeight || 0;
+    const d = document.documentElement?.scrollHeight || 0;
+    return Math.max(b, d);
   }
 
-  function init() {
-    sendHeight();
-    setTimeout(sendHeight, 200);
-    setTimeout(sendHeight, 600);
+  function sendHeight() {
+    const h = getHeight();
+    if (!h) return;
 
-    window.addEventListener("resize", () => {
-      setTimeout(sendHeight, 100);
-    });
+  
+    if (Math.abs(h - last) <= 2) return;
+    last = h;
+
+ 
+    window.parent.postMessage({ type: "yae:resize", height: h }, "*");
+ 
+    console.log("[YAE] send height:", h);
+  }
+
+  function burst() {
+ 
+    sendHeight();
+    let i = 0;
+    const t = setInterval(() => {
+      sendHeight();
+      i += 1;
+      if (i >= 10) clearInterval(t);
+    }, 200);
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
+    document.addEventListener("DOMContentLoaded", burst);
   } else {
-    init();
+    burst();
   }
 
-  window.addEventListener("load", () => {
-    setTimeout(sendHeight, 100);
-  });
+  window.addEventListener("load", burst);
+  window.addEventListener("pageshow", burst);
+
+
+  window.addEventListener("resize", () => setTimeout(sendHeight, 150));
 })();
