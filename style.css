@@ -76,7 +76,7 @@ h2 {
 /* Intro */
 
 .intro {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
     margin-bottom: 36px;
     line-height: 1.7;
@@ -177,46 +177,47 @@ button:disabled {
     cursor: not-allowed;
 }
 
-
-/* Thank you page */
-
 .thankyou-buttons {
   display: flex;
-  gap: 16px;
-  margin-top: 32px;
+  gap: 14px;
+  margin-top: 28px;
   flex-wrap: wrap;
 }
 
 .thankyou-buttons .btn {
   display: inline-block;
-  padding: 14px 22px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-size: 1rem;
+  padding: 12px 18px;
+  border-radius: 999px; 
+  font-size: 0.95rem;
   font-weight: 500;
+  text-decoration: none;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.thankyou-buttons .btn-primary {
   background: #1f5a4f;
   color: #fff;
-  transition: background 0.2s ease;
 }
 
-.thankyou-buttons .btn:hover {
-  background: #184a41;
+.thankyou-buttons .btn-primary:hover {
+    background: #184a41;
 }
 
-.thankyou-buttons .secondary {
-  background: transparent;
+.thankyou-buttons .btn-secondary {
+   background: transparent;
   color: #1f5a4f;
-  border: 2px solid #1f5a4f;
+  border: 1px solid var(--border-soft);
 }
 
-.thankyou-buttons .secondary:hover {
-  background: rgba(31, 90, 79, 0.08);
+.thankyou-buttons .btn-secondary:hover {
+    background: rgba(31, 90, 79, 0.08);
 }
 
 @media (max-width: 640px) {
-  .thankyou-buttons {
-    flex-direction: column;
-  }
+    .thankyou-buttons {
+        flex-direction: column;
+    }
 }
 
 
@@ -255,7 +256,7 @@ button:disabled {
         padding: 24px 16px 32px;
     }
 
-    label + label {
+    label+label {
         margin-top: 4px;
     }
 
@@ -273,7 +274,7 @@ button:disabled {
 
     .grid {
         grid-template-columns: 1fr;
-        gap: 4px; 
+        gap: 4px;
     }
 
     h1 {
@@ -294,11 +295,11 @@ button:disabled {
 @media (max-width: 1024px) and (min-width: 641px) {
 
     body {
-        font-size: 16px; 
+        font-size: 16px;
     }
 
     .form-wrapper {
-        max-width: 880px;        
+        max-width: 880px;
         width: calc(100% - 32px);
         margin: 32px auto;
         padding: 32px 28px;
