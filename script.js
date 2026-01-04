@@ -7,14 +7,10 @@ form.addEventListener("submit", function (e) {
     submitButton.disabled = true;
 
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
 
-    fetch("https://script.google.com/macros/s/AKfycbxvJZfzZlSGxxJyhsj5AtWKpuPYDXaSuWlLm8bAdTDXPbp2Zo73Oqh6mBUxj0n3l8UqNQ/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxpN7q1q2Elpj83vNhMy1ogQzWCM3YZ6O1J_XhD8YySqIjo004sknITe2a205jT_ixxxA/exec", {
         method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-            "Content-Type": "application/json",
-        },
+        body: formData,
     })
         .then((response) => {
             if (!response.ok) {
@@ -30,9 +26,7 @@ form.addEventListener("submit", function (e) {
             alert("Radās kļūda. Lūdzu, mēģiniet vēlreiz.");
             submitButton.disabled = false;
         });
-
 });
-
 
 
 const offenderSelect = document.getElementById("offenderSelect");
