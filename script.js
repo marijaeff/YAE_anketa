@@ -44,40 +44,39 @@ offenderSelect.addEventListener("change", function () {
 
 
 (function () {
+  let lastHeight = 0;
+
   function sendHeight() {
     const height = document.documentElement.scrollHeight;
-    window.parent.postMessage({ type: "resize-iframe", height }, "*");
+
+    // 🔑 защита от бесконечного роста
+    if (Math.abs(height - lastHeight) < 4) return;
+
+    lastHeight = height;
+
+    window.parent.postMessage(
+      { type: "resize-iframe", height },
+      "*"
+    );
   }
 
-  function initAutoResize() {
-  
+  function init() {
     sendHeight();
-    setTimeout(sendHeight, 100);
-    setTimeout(sendHeight, 300);
-    setTimeout(sendHeight, 800);
-
-   
-    if ("ResizeObserver" in window) {
-      const ro = new ResizeObserver(() => sendHeight());
-      ro.observe(document.documentElement);
-    } else {
-      const mo = new MutationObserver(() => sendHeight());
-      mo.observe(document.documentElement, { childList: true, subtree: true });
-    }
+    setTimeout(sendHeight, 200);
+    setTimeout(sendHeight, 600);
 
     window.addEventListener("resize", () => {
-     
-      setTimeout(sendHeight, 50);
+      setTimeout(sendHeight, 100);
     });
   }
 
-  
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initAutoResize);
+    document.addEventListener("DOMContentLoaded", init);
   } else {
-    initAutoResize();
+    init();
   }
 
-
-  window.addEventListener("load", () => setTimeout(sendHeight, 50));
+  window.addEventListener("load", () => {
+    setTimeout(sendHeight, 100);
+  });
 })();
