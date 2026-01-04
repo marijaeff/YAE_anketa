@@ -53,8 +53,8 @@ body {
 }
 
 .logo img {
-    max-width: 100px;
-    /* ← регулируй тут */
+    max-width: 150px;
+    opacity: 0.95;
     width: 100%;
     height: auto;
 }
@@ -141,7 +141,7 @@ select:focus {
 /* Button */
 
 button {
-    margin-top: 36px;
+    margin-top: 25px;
     padding: 18px;
     width: 100%;
     border-radius: 14px;
