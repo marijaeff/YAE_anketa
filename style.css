@@ -23,7 +23,7 @@ body {
     background: var(--bg-page);
     color: var(--text-main);
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 35px;
+    font-size: 18px;
     line-height: 1.6;
 }
 
@@ -48,8 +48,8 @@ body {
 
 .header h1 {
     margin: 0;
-    font-size: 1.8rem;
-    line-height: 1.2;
+    font-size: 2.2rem;
+    line-height: 1.25;
 }
 
 .logo img {
@@ -62,7 +62,7 @@ body {
 /* Headings */
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 500;
     margin-bottom: 16px;
 }
@@ -70,7 +70,7 @@ h1 {
 h2 {
     margin-top: 40px;
     margin-bottom: 16px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 /* Intro */
@@ -87,7 +87,7 @@ h2 {
 label {
     display: block;
     margin-bottom: 24px;
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
 input,
@@ -95,11 +95,11 @@ textarea,
 select {
     width: 100%;
     margin-top: 8px;
-    padding: 12px 14px;
+    padding: 12px 16px;
     border-radius: 10px;
     border: 1px solid var(--border-soft);
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1rem;
+    font-size: 1.05rem;
     background: #fff;
 }
 
@@ -148,7 +148,7 @@ select:focus {
 
 button {
     margin-top: 32px;
-    padding: 16px 20px;
+    padding: 18px 20px;
     width: 100%;
     border-radius: 14px;
     border: none;
@@ -156,7 +156,7 @@ button {
     background: #1f5a4f;
     color: #ffffff;
 
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 0.2px;
 
