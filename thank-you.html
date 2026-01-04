@@ -18,20 +18,23 @@
             </div>
         </div>
 
-        <p class="intro">
-
+        <p class="thankyou-text">
             Jūsu pieteikums ir veiksmīgi saņemts.
-            Aptuveni 10 minūšu laikā uz Jūsu norādīto e-pasta adresi tiks nosūtīts apstiprinājums.
-
-            <br><br>
-            Mēs ar Jums sazināsimies tuvākajā laikā, lai pārrunātu nākamos soļus.
-
-            <br><br>
-            Ja šobrīd vēlaties, aicinām iepazīties ar kampaņām vai noderīgiem rakstiem, ko sagatavojuši Bērna mājas
-            speciālisti.
         </p>
 
+        <p class="thankyou-text">
+            Aptuveni 10 minūšu laikā uz Jūsu norādīto e-pasta adresi
+            tiks nosūtīts apstiprinājums.
+        </p>
 
+        <p class="thankyou-text">
+            Mēs ar Jums sazināsimies tuvākajā laikā,
+            lai pārrunātu nākamos soļus.
+        </p>
+
+        <p class="thankyou-hint">
+            Šobrīd varat doties:
+        </p>
         <div class="thankyou-buttons">
             <a href="https://www.bernamaja.lv/" class="btn btn-secondary" target="_top">
                 Uz sākumlapu
@@ -45,20 +48,6 @@
 
     </div>
 
-    <script>
-        window.addEventListener("load", () => {
-            setTimeout(() => {
-                if (window.parent) {
-                    const height = document.documentElement.scrollHeight;
-                    window.parent.postMessage(
-                        { type: "yae:resize", height },
-                        "*"
-                    );
-                }
-            }, 100);
-        });
-    </script>
-    
 </body>
 
 </html>

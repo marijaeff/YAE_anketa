@@ -47,9 +47,9 @@ body {
 }
 
 .header h1 {
-    margin: 0;
-    font-size: 2.2rem;
-    line-height: 1.25;
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 18px;
 }
 
 .logo img {
@@ -212,6 +212,20 @@ button:disabled {
 
 .thankyou-buttons .btn-secondary:hover {
     background: rgba(31, 90, 79, 0.08);
+}
+
+.thankyou-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 14px;
+  color: var(--text-main);
+}
+
+.thankyou-hint {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }
 
 @media (max-width: 640px) {
