@@ -23,16 +23,16 @@ body {
     background: var(--bg-page);
     color: var(--text-main);
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 17px;
+    font-size: 35px;
     line-height: 1.6;
 }
 
 /* Card */
 
 .form-wrapper {
-    max-width: 720px;
+    max-width: 1024px;  
     margin: 40px auto;
-    padding: 36px 28px;
+    padding: 36px 40px;
     background: var(--bg-card);
     border-radius: 22px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
@@ -76,7 +76,7 @@ h2 {
 /* Intro */
 
 .intro {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: var(--text-muted);
     margin-bottom: 36px;
     line-height: 1.7;
