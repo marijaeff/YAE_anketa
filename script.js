@@ -46,46 +46,28 @@ offenderSelect.addEventListener("change", function () {
 (() => {
   let last = 0;
 
-  function getHeight() {
-    const b = document.body?.scrollHeight || 0;
-    const d = document.documentElement?.scrollHeight || 0;
-    return Math.max(b, d);
-  }
-
   function sendHeight() {
-    const h = getHeight();
-    if (!h) return;
+    const h = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
 
-  
-    if (Math.abs(h - last) <= 2) return;
+    if (!h || Math.abs(h - last) < 4) return;
     last = h;
 
- 
-    window.parent.postMessage({ type: "yae:resize", height: h }, "*");
- 
-    console.log("[YAE] send height:", h);
+    window.parent.postMessage(
+      { type: "yae:resize", height: h },
+      "*"
+    );
   }
 
-  function burst() {
- 
+  window.addEventListener("load", () => {
     sendHeight();
-    let i = 0;
-    const t = setInterval(() => {
-      sendHeight();
-      i += 1;
-      if (i >= 10) clearInterval(t);
-    }, 200);
-  }
+    setTimeout(sendHeight, 300);
+    setTimeout(sendHeight, 800);
+  });
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", burst);
-  } else {
-    burst();
-  }
-
-  window.addEventListener("load", burst);
-  window.addEventListener("pageshow", burst);
-
-
-  window.addEventListener("resize", () => setTimeout(sendHeight, 150));
+  window.addEventListener("resize", () => {
+    setTimeout(sendHeight, 150);
+  });
 })();
