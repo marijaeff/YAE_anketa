@@ -43,27 +43,41 @@ offenderSelect.addEventListener("change", function () {
 });
 
 
-function sendHeight() {
+(function () {
+  function sendHeight() {
     const height = document.documentElement.scrollHeight;
-    window.parent.postMessage(
-        { type: "resize-iframe", height },
-        "*"
-    );
-}
+    window.parent.postMessage({ type: "resize-iframe", height }, "*");
+  }
 
-
-window.addEventListener("load", () => {
+  function initAutoResize() {
+  
     sendHeight();
+    setTimeout(sendHeight, 100);
     setTimeout(sendHeight, 300);
     setTimeout(sendHeight, 800);
-});
+
+   
+    if ("ResizeObserver" in window) {
+      const ro = new ResizeObserver(() => sendHeight());
+      ro.observe(document.documentElement);
+    } else {
+      const mo = new MutationObserver(() => sendHeight());
+      mo.observe(document.documentElement, { childList: true, subtree: true });
+    }
+
+    window.addEventListener("resize", () => {
+     
+      setTimeout(sendHeight, 50);
+    });
+  }
+
+  
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initAutoResize);
+  } else {
+    initAutoResize();
+  }
 
 
-window.addEventListener("resize", sendHeight);
-
-
-const observer = new MutationObserver(sendHeight);
-observer.observe(document.body, {
-    childList: true,
-    subtree: true,
-});
+  window.addEventListener("load", () => setTimeout(sendHeight, 50));
+})();
