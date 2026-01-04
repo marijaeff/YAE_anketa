@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="lv">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>You Are Enough™ - Pieteikuma anketa</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="form-wrapper">
+
+        <h1>You Are Enough™ atbalsta grupa</h1>
+
+        <p class="intro">
+            Pieteikuma anketā sniegtā kontaktinformācija tiek izmantota tikai saziņai ar Jums.
+            Pirms grupas uzsākšanas ar katru pieteicēju tiks veikta individuāla saruna.
+        </p>
+
+        <form id="applicationForm">
+
+            <label>
+                Kā Jūs uzzinājāt par šo atbalsta grupu?
+                <input type="text" name="source" />
+            </label>
+
+            <label>
+                Kāds ir Jūsu pieteikšanās iemesls dalībai atbalsta grupā?
+                <textarea name="reason" rows="4"></textarea>
+            </label>
+
+            <h2>Kontaktinformācija</h2>
+
+            <div class="grid">
+                <label>
+                    Vārds *
+                    <input type="text" name="firstName" required />
+                </label>
+
+                <label>
+                    Uzvārds *
+                    <input type="text" name="lastName" required />
+                </label>
+
+                <label>
+                    Tālrunis *
+                    <input type="tel" name="phone" required />
+                </label>
+
+                <label>
+                    E-pasts *
+                    <input type="email" name="email" required />
+                </label>
+            </div>
+
+            <label>
+                Pasta adrese
+                <input type="text" name="address" />
+            </label>
+
+            <label>
+                Vecums *
+                <input type="number" name="age" min="18" required/>
+            </label>
+
+
+            <label>
+                Nodarbinātības statuss *
+                <select name="workStatus" required>
+                    <option value="">— izvēlieties —</option>
+                    <option>Darba ņēmējs</option>
+                    <option>Pašnodarbinātais / uzņēmējs</option>
+                    <option>Bezdarbnieks</option>
+                    <option>Pensionārs</option>
+                    <option>Students</option>
+                    <option>Darbnespēja</option>
+                    <option>Cits</option>
+                </select>
+            </label>
+
+            <label>
+                Kādu atbalstu Jūs šobrīd saņemat? *
+                <textarea name="currentSupport" rows="3" required></textarea >
+            </label>
+
+            <label>
+                Pāridarījuma veicējs *
+                <select name="offender" id="offenderSelect" required>
+                    <option value="">- izvēlieties -</option>
+                    <option value="Tuvs cilvēks">Tuvs cilvēks</option>
+                    <option value="Persona no ārpuses">Persona no ārpuses</option>
+                    <option value="Interneta paziņa">Interneta paziņa</option>
+                    <option value="Cits">Cits</option>
+                </select>
+            </label>
+
+            <label id="offenderOtherWrapper" style="display: none;">
+                Lūdzu, norādiet, kas tieši
+                <input type="text" name="offenderOther" id="offenderOtherInput" placeholder="Norādiet" />
+            </label>
+
+            <label>
+                Vai ir vēl kas, ar ko Jūs vēlētos dalīties?
+                <textarea name="additionalInfo" rows="4"></textarea>
+            </label>
+
+            <label class="checkbox">
+                <input type="checkbox" required />
+                Esmu iepazinies/-usies ar datu aizsardzības un privātuma politiku un tai piekrītu
+            </label>
+
+            <button type="submit">Iesniegt pieteikumu</button>
+
+            <p class="note">
+                * Obligātie lauki
+            </p>
+
+        </form>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
