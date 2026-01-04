@@ -42,15 +42,28 @@ offenderSelect.addEventListener("change", function () {
     }
 });
 
+
 function sendHeight() {
-  const height = document.body.scrollHeight;
-  window.parent.postMessage(
-    { type: "resize-iframe", height },
-    "*"
-  );
+    const height = document.documentElement.scrollHeight;
+    window.parent.postMessage(
+        { type: "resize-iframe", height },
+        "*"
+    );
 }
 
-window.addEventListener("load", sendHeight);
+
+window.addEventListener("load", () => {
+    sendHeight();
+    setTimeout(sendHeight, 300);
+    setTimeout(sendHeight, 800);
+});
 
 
 window.addEventListener("resize", sendHeight);
+
+
+const observer = new MutationObserver(sendHeight);
+observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+});
