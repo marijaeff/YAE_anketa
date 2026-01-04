@@ -44,6 +44,20 @@
 
 
     </div>
+
+    <script>
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                if (window.parent) {
+                    const height = document.documentElement.scrollHeight;
+                    window.parent.postMessage(
+                        { type: "yae:resize", height },
+                        "*"
+                    );
+                }
+            }, 100);
+        });
+    </script>
     <script src="iframe-resize.js"></script>
 </body>
 

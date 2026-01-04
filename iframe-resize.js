@@ -21,12 +21,14 @@ function sendHeight() {
   );
 }
 
-window.addEventListener("load", () => {
+window.onload = () => {
   sendHeight();
+
   setTimeout(sendHeight, 300);
   setTimeout(sendHeight, 800);
   setTimeout(sendHeight, 1500);
-});
+  setTimeout(sendHeight, 2500);
+};
 
 window.addEventListener("resize", () => {
   setTimeout(sendHeight, 200);
