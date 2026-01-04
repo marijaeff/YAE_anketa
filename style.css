@@ -76,13 +76,31 @@ h2 {
 /* Intro */
 
 .intro {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin-bottom: 36px;
-    line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #21463e; 
 }
 
+.intro strong {
+  color: #163a33;
+  font-weight: 500;
+}
+
+.intro a {
+  color: #1f5a4f;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.intro a:hover {
+  text-decoration-thickness: 2px;
+}
 /* Labels & fields */
+
+.intro.intro:last-of-type {
+  margin-bottom: 50px;
+}
 
 label {
     display: block;
