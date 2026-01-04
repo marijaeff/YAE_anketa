@@ -18,9 +18,7 @@ form.addEventListener("submit", function (e) {
             }
         })
         .then(() => {
-            alert("Paldies! Jūsu pieteikums ir nosūtīts.");
-            form.reset();
-            submitButton.disabled = false;
+            window.location.href = "thank-you.html";
         })
         .catch(() => {
             alert("Radās kļūda. Lūdzu, mēģiniet vēlreiz.");

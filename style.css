@@ -177,6 +177,49 @@ button:disabled {
     cursor: not-allowed;
 }
 
+
+/* Thank you page */
+
+.thankyou-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.thankyou-buttons .btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  background: #1f5a4f;
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+.thankyou-buttons .btn:hover {
+  background: #184a41;
+}
+
+.thankyou-buttons .secondary {
+  background: transparent;
+  color: #1f5a4f;
+  border: 2px solid #1f5a4f;
+}
+
+.thankyou-buttons .secondary:hover {
+  background: rgba(31, 90, 79, 0.08);
+}
+
+@media (max-width: 640px) {
+  .thankyou-buttons {
+    flex-direction: column;
+  }
+}
+
+
 /* Note */
 
 .note {
