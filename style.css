@@ -1,123 +1,197 @@
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, sans-serif;
-  background: #f7f9f8;
-  color: #2b2b2b;
-  font-size: 16px; 
+:root {
+    --bg-page: #bfe8d6;
+    --bg-card: #F7F1E8;
+
+    --text-main: #163a33;
+    --text-muted: #4f6f68;
+
+    --border-soft: #cfe3dd;
+
+    --accent-dark: #163a33;
 }
+
+/* Reset */
+
+* {
+    box-sizing: border-box;
+}
+
+/* Page */
+
+body {
+    margin: 0;
+    background: var(--bg-page);
+    color: var(--text-main);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Card */
 
 .form-wrapper {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 24px 16px; 
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 36px 28px;
+    background: var(--bg-card);
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.logo img {
+    max-width: 100px;
+    /* ← регулируй тут */
+    width: 100%;
+    height: auto;
+}
+
+/* Headings */
 
 h1 {
-  font-size: 1.8rem;
-  margin-bottom: 12px;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 16px;
 }
 
 h2 {
-  margin-top: 32px;
-  font-size: 1.2rem;
+    margin-top: 36px;
+    font-size: 1.3rem;
+    font-weight: 500;
 }
+
+/* Intro */
 
 .intro {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 32px;
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 36px;
+    line-height: 1.7;
 }
 
+/* Labels & fields */
+
 label {
-  display: block;
-  margin-bottom: 20px;
-  font-size: 0.9rem;
+    display: block;
+    margin-bottom: 24px;
+    font-size: 1rem;
 }
 
 input,
 textarea,
 select {
-  width: 100%;
-  margin-top: 6px;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 0.95rem;
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border-soft);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    background: #fff;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  outline: none;
-  border-color: #6fa8a1;
+    outline: none;
+    border-color: var(--accent-dark);
+    box-shadow: 0 0 0 3px rgba(22, 58, 51, 0.15);
 }
+
+/* Grid */
 
 .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
+
+/* Checkbox */
 
 .checkbox {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  font-size: 0.9rem;
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 12px;
+    align-items: start;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
 }
 
-.checkbox input {
-  margin-top: 3px;
-  transform: scale(1.2); 
+.checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
 }
+
+
+/* Button */
 
 button {
-  margin-top: 28px;
-  padding: 16px;
-  width: 100%;
-  border-radius: 12px;
-  border: none;
-  background: #6fa8a1;
-  color: white;
-  font-size: 1.05rem;
-  cursor: pointer;
+    margin-top: 36px;
+    padding: 18px;
+    width: 100%;
+    border-radius: 14px;
+    border: none;
+    background: var(--accent-dark);
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 button:hover {
-  background: #5c968f;
+    opacity: 0.9;
 }
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Note */
 
 .note {
-  font-size: 0.8rem;
-  color: #666;
-  margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 16px;
 }
 
-input,
-textarea,
-select {
-  width: 100%;
-  margin-top: 6px;
-  padding: 12px 14px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 1rem; 
-}
+/* Mobile */
 
 @media (max-width: 640px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+    .form-wrapper {
+        margin: 20px 16px;
+        padding: 28px 18px;
+    }
 
-  h1 {
-    font-size: 1.5rem;
-  }
+    .grid {
+        grid-template-columns: 1fr;
+    }
 
-  h2 {
-    font-size: 1.1rem;
-  }
+    h1 {
+        font-size: 1.6rem;
+    }
 
-  .intro {
-    font-size: 0.95rem;
-  }
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .logo img {
+        max-width: 110px;
+    }
 }

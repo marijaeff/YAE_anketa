@@ -12,7 +12,13 @@
 
     <div class="form-wrapper">
 
-        <h1>You Are Enough™ atbalsta grupa</h1>
+        <div class="header">
+            <h1>You Are Enough™ atbalsta grupa</h1>
+
+            <div class="logo">
+                <img src="logo.png" alt="Bērna māja logo">
+            </div>
+        </div>
 
         <p class="intro">
             Pieteikuma anketā sniegtā kontaktinformācija tiek izmantota tikai saziņai ar Jums.
@@ -56,22 +62,22 @@
             </div>
 
             <label>
-                Pasta adrese
+                Dzīvesvietas adrese
                 <input type="text" name="address" />
             </label>
 
             <label>
                 Vecums *
-                <input type="number" name="age" min="18" required/>
+                <input type="number" name="age" min="18" required />
             </label>
 
 
             <label>
                 Nodarbinātības statuss *
                 <select name="workStatus" required>
-                    <option value="">— izvēlieties —</option>
+                    <option value="">- izvēlieties -</option>
                     <option>Darba ņēmējs</option>
-                    <option>Pašnodarbinātais / uzņēmējs</option>
+                    <option>Pašnodarbinātais/uzņēmējs</option>
                     <option>Bezdarbnieks</option>
                     <option>Pensionārs</option>
                     <option>Students</option>
@@ -81,16 +87,16 @@
             </label>
 
             <label>
-                Kādu atbalstu Jūs šobrīd saņemat? *
-                <textarea name="currentSupport" rows="3" required></textarea >
+                Kādu atbalstu Jūs šobrīd saņemat? (psihologa, atbalsta grupas, kursi u.c.) *
+                <textarea name="currentSupport" rows="3" required></textarea>
             </label>
 
             <label>
                 Pāridarījuma veicējs *
                 <select name="offender" id="offenderSelect" required>
                     <option value="">- izvēlieties -</option>
-                    <option value="Tuvs cilvēks">Tuvs cilvēks</option>
-                    <option value="Persona no ārpuses">Persona no ārpuses</option>
+                    <option value="Tuvs cilvēks">Cilvēks no ģimenes loka/tuvs cilvēks</option>
+                    <option value="Persona no ārpuses">Persona ārpus ģimenes</option>
                     <option value="Interneta paziņa">Interneta paziņa</option>
                     <option value="Cits">Cits</option>
                 </select>
