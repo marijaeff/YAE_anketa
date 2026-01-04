@@ -41,3 +41,16 @@ offenderSelect.addEventListener("change", function () {
         offenderOtherInput.value = "";
     }
 });
+
+function sendHeight() {
+  const height = document.body.scrollHeight;
+  window.parent.postMessage(
+    { type: "resize-iframe", height },
+    "*"
+  );
+}
+
+window.addEventListener("load", sendHeight);
+
+
+window.addEventListener("resize", sendHeight);

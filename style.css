@@ -178,26 +178,26 @@ button:disabled {
 }
 
 .thankyou-buttons {
-  display: flex;
-  gap: 14px;
-  margin-top: 28px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+    flex-wrap: wrap;
 }
 
 .thankyou-buttons .btn {
-  display: inline-block;
-  padding: 12px 18px;
-  border-radius: 999px; 
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: none;
-  line-height: 1;
-  transition: all 0.2s ease;
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 1;
+    transition: all 0.2s ease;
 }
 
 .thankyou-buttons .btn-primary {
-  background: #1f5a4f;
-  color: #fff;
+    background: #1f5a4f;
+    color: #fff;
 }
 
 .thankyou-buttons .btn-primary:hover {
@@ -205,9 +205,9 @@ button:disabled {
 }
 
 .thankyou-buttons .btn-secondary {
-   background: transparent;
-  color: #1f5a4f;
-  border: 1px solid var(--border-soft);
+    background: transparent;
+    color: #1f5a4f;
+    border: 1px solid var(--border-soft);
 }
 
 .thankyou-buttons .btn-secondary:hover {
