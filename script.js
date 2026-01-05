@@ -10,7 +10,7 @@ if (form) {
 
         const formData = new FormData(form);
 
-        fetch("https://script.google.com/macros/s/AKfycbzrs7Jn39ctmo3y5hYtWsqTzwbWZDHVNc7gGQgzkcSuII8IZLDNdF42vh_4BJ91A-UTEw/exec", {
+        fetch("https://script.google.com/macros/s/AKfycbxTFv9Lpzb9IeGsB0CjBLfOBW9iI3du3HDML072JNQYpsTKRBOGmWgnhsJ6K_KBsI_dMw/exec", {
             method: "POST",
             body: formData,
         })
