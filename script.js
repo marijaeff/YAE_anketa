@@ -18,8 +18,9 @@ if (form) {
                 if (!response.ok) throw new Error("Server error");
             })
             .then(() => {
-                window.location.href = "thank-you.html";
+                window.location.href = "https://www.bernamaja.lv/resursi/paldies-atbalsta-grupa";
             })
+
             .catch(() => {
                 alert("Radās kļūda. Lūdzu, mēģiniet vēlreiz.");
                 submitButton.disabled = false;
