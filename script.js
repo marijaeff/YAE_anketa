@@ -46,3 +46,21 @@ if (offenderSelect && offenderOtherWrapper && offenderOtherInput) {
         }
     });
 }
+
+
+function sendHeight() {
+  const height = document.documentElement.scrollHeight;
+  window.parent.postMessage(
+    { type: "yae:resize", height },
+    "*"
+  );
+}
+
+window.addEventListener("load", sendHeight);
+window.addEventListener("resize", sendHeight);
+
+const observer = new MutationObserver(sendHeight);
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
+});
