@@ -14,13 +14,13 @@ if (form) {
             method: "POST",
             body: formData,
         })
-            .then((response) => {
-                if (!response.ok) throw new Error("Server error");
-            })
-            .then(() => {
-                window.location.href = "https://www.bernamaja.lv/resursi/paldies-atbalsta-grupa";
-            })
+            .then((response) => response.text())
+            .then((text) => {
+                if (text !== "OK") throw new Error("Server error");
 
+                window.top.location.href =
+                    "https://www.bernamaja.lv/resursi/paldies-atbalsta-grupa";
+            })
             .catch(() => {
                 alert("Radās kļūda. Lūdzu, mēģiniet vēlreiz.");
                 submitButton.disabled = false;
