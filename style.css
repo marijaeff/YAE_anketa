@@ -1,3 +1,8 @@
+html, body {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
 :root {
     --bg-page: #AEE2CE;
     --bg-card: #F7F1E8;
