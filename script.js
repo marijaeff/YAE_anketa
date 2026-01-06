@@ -49,7 +49,17 @@ if (offenderSelect && offenderOtherWrapper && offenderOtherInput) {
 
 
 function sendHeight() {
-  const height = document.documentElement.scrollHeight;
+  const body = document.body;
+  const html = document.documentElement;
+
+  const height = Math.max(
+    body.scrollHeight,
+    body.offsetHeight,
+    html.clientHeight,
+    html.scrollHeight,
+    html.offsetHeight
+  );
+
   window.parent.postMessage(
     { type: "yae:resize", height },
     "*"
@@ -59,8 +69,16 @@ function sendHeight() {
 window.addEventListener("load", sendHeight);
 window.addEventListener("resize", sendHeight);
 
-const observer = new MutationObserver(sendHeight);
+if (document.fonts) {
+  document.fonts.ready.then(sendHeight);
+}
+
+const observer = new MutationObserver(() => {
+  requestAnimationFrame(sendHeight);
+});
+
 observer.observe(document.body, {
   childList: true,
   subtree: true,
+  attributes: true,
 });
