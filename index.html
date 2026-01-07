@@ -76,8 +76,8 @@
 
                 <label>
                     Tālrunis *
-                    <input type="tel" name="phone" required minlength="8" maxlength="15" inputmode="tel"
-                        placeholder="+371 2xxxxxxx" />
+                    <input type="tel" name="phone" required pattern="[\d\s\+\-]{8,}" inputmode="tel"
+                        placeholder="2xxxxxxx" />
                 </label>
 
                 <label>
