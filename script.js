@@ -48,6 +48,13 @@ if (offenderSelect && offenderOtherWrapper && offenderOtherInput) {
     });
 }
 
+const phoneInput = document.querySelector('input[name="phone"]');
+
+if (phoneInput) {
+  phoneInput.addEventListener("input", () => {
+    phoneInput.value = phoneInput.value.replace(/\s{2,}/g, " ");
+  });
+}
 
 function sendHeight() {
   const body = document.body;

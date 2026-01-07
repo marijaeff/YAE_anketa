@@ -76,7 +76,8 @@
 
                 <label>
                     Tālrunis *
-                    <input type="tel" name="phone" required />
+                    <input type="tel" name="phone" required minlength="8" maxlength="15" inputmode="tel"
+                        placeholder="+371 2xxxxxxx" />
                 </label>
 
                 <label>
@@ -97,7 +98,7 @@
 
             <h2>Papildus informācija par Jūsu pieredzi</h2>
             <label>
-                Nodarbinātības statuss 
+                Nodarbinātības statuss
                 <select name="workStatus">
                     <option value="">- izvēlieties -</option>
                     <option>Darba ņēmējs</option>
@@ -111,7 +112,7 @@
             </label>
 
             <label>
-                Kādu atbalstu Jūs šobrīd saņemat? (psihologa, atbalsta grupas, kursi u.c.) 
+                Kādu atbalstu Jūs šobrīd saņemat? (psihologa, atbalsta grupas, kursi u.c.)
                 <textarea name="currentSupport" rows="3"></textarea>
             </label>
 
